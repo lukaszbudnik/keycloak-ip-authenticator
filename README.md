@@ -18,7 +18,7 @@ mvn package
 
 ## deploy
 
-And then, assuming $KEYCLOAK_HOME is pointing to you Keycloak installation, just copy it into deployments directory:
+And then, assuming `$KEYCLOAK_HOME` is pointing to you Keycloak installation, just copy it into deployments directory:
  
 ```bash
 cp target/keycloak-ip-authenticator.jar $KEYCLOAK_HOME/standalone/deployments/
