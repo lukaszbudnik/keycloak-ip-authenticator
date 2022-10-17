@@ -8,7 +8,7 @@ See the following Youtube video which explains how to deploy and configure it in
 
 ## build
 
-Make sure that Keycloak SPI dependencies and your Keycloak server versions match. Keycloak SPI dependencies version is configured in `pom.xml` in the `keycloak.version` property.  
+The Keycloak SPI is very stable but always make sure that Keycloak SPI dependencies and your Keycloak server versions match. Keycloak SPI dependencies version is configured in `pom.xml` in the `keycloak.version` property.
 
 To build the project execute the following command:
 
@@ -18,8 +18,16 @@ mvn package
 
 ## deploy
 
-And then, assuming `$KEYCLOAK_HOME` is pointing to you Keycloak installation, just copy it into deployments directory:
+Assuming `$KEYCLOAK_HOME` is pointing to you Keycloak installation.
+
+If you use legacy Keycloak running on WildFly copy it into deployments directory:
  
 ```bash
 cp target/keycloak-ip-authenticator.jar $KEYCLOAK_HOME/standalone/deployments/
+```
+
+If you use latest Keycloak running on Quarkus copy it into providers directory:
+
+```bash
+cp target/keycloak-ip-authenticator.jar $KEYCLOAK_HOME/providers/
 ```
